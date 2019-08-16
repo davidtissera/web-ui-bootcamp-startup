@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<form>
+    <h1>Data form</h1>
+    <label name = "label" for = "fname">First name:</label><br><input name = "input" id = "fname" required><br>
+    <label name = "label" for = "lname">Last name:</label><br><input name = "input" id = "lname" required><br>
+    <label name = "label" for = "email">E-mail:</label><br><input name = "input" type = "email" required><br>
+    <label name = "label" for = "birthday">Birthday:</label><br><input name = "input" type = "date" required><br>
+
+    <br><label>Choose your favorite sport:</label><br>
+        <br><input name = "input" type= "radio" id = "r1" value = "Soccer" required><label for = "r1">Soccer</label><br>
+        <input name = "input" type= "radio" id = "r2" value = "Rugby" required><label for = "r2">Rugby</label><br>
+        <input name = "input" type= "radio" id = "r3" value = "Basketball" required><label for = "r3">Basketball</label><br>
+        <input name = "input" type= "radio" id = "r4" value = "Tennis" required><label for = "r4">Tennis</label><br>
+        <input name = "input" type= "radio" id = "r5" value = "Volleyball" required><label for = "r5">Volleyball</label><br>
+        <br><br><label>Told us something about you:</label><br>
+        <br><textarea name = "input" type = "text" id = "bio" required minlength="10" maxlength="100"></textarea><br>
+    <button id = "submit">Submit</button>
+    <button id = "clear">Clear Form</button>
+</form>
+<script>
+    const myInput= document.getElementsByName('input');
+    const myClearButton = document.getElementById('clear');
+    const mySubmitButton = document.getElementById('submit');
+    const myBox = document.getElementById('bio');
+
+    myClearButton.onclick = () => {
+        for (let i = 0; i < myInput.length; i++){
+            myInput[i].value = "";
+        }
+    }
+    mySubmitButton.onclick = () => {
+        let flag = 0;
+        for (let i = 0; i < myInput.length && flag == 0; i++){
+            if (myInput[i].value === "" && myBox.value === ""){
+                flag = 1;
+            }
+        }
+        if (flag === 1){
+            alert("You have to fill all the fields for submitting");
+        }
+        else {
+            alert("The information was submitted correctly");
+        }
+    }
+</script>
+<style>
+    html {
+        height: 900px;
+        font-family: monospace;
+        font-weight: 500;
+        font-size: medium;
+        background-image: linear-gradient(to left, rgb(180, 180, 180), rgb(100, 100, 100));
+    }
+    div {
+        width: 400px;
+        padding-bottom: 10px;
+    }
+
+    form {
+        padding-left: 30px;
+        padding-top: 10px;
+    }
+
+    #submit {
+        font-size: 15px;
+        border-radius: 5px;
+        font-family: monospace;
+        padding: 15px 23px;
+    }
+    #clear {
+        font-size: 15px;
+        border-radius: 5px;
+        font-family: monospace;
+        padding: 15px 7px;
+    }
+    #bio {
+        width: 210px;
+        height: 80px;
+    }
+</style>
+</html> 
