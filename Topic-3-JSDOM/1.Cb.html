@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html {
+            background-color: #232323;
+        }
+        .container { 
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: white;
+            background-color: orangered;
+            display: inline-block;
+            border-radius: 1%;
+            padding: 3% 5%;
+            margin: 1% 2%;
+        }
+        input {
+            width: 155px;
+            outline: none;
+        }
+        #label1 {
+            font-size: 15px;
+        }
+        button {
+            margin-top: 1.7%;
+            font-size: 15px;
+            width: 161px;
+            background-color: white;
+            color: orangered;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class = "container">
+    <label id = "label1" for = "input1">Insert a day-week here:</label><br><input id = "input1" type = "text"><br>
+    <button id = "button1">Submit it!</button>
+    </div><br>
+    <div class = "container">
+    <label id = "label2" for = "input2">Insert a number here:</label><br><input id = "input2" type = "number"><br>
+    <button id = "button2">Submit it!</button>
+    </div>
+</body>
+<script>
+    const button = document.querySelectorAll('button');
+    const input = document.querySelectorAll('input');
+    let daysWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let day, num, indexDay;
+
+    button[0].onclick = () => {
+        day = input[0].value;
+        indexDay = daysWeek.indexOf(day);
+        if (indexDay < 0 || indexDay > 6){
+            console.log('Try again, beware, case sensitive');
+            input[0].value = "";
+        }
+        else {
+            console.log("Day submitted!");
+            input[0].value = "";
+        }
+    }
+
+    button[1].onclick = () => {
+        num = Number(input[1].value);
+        if ((num < 0 || num > 7) || input[1].value === ""){
+            console.log("Invalid range, try again");
+            input[1].value = "";
+        }
+        else {
+            if (input[0].value !== ""){
+                console.log("Number submitted!");
+                getDayAfter();
+                input[1].value = "";
+            }
+            else {
+                console.log("You have to insert a day-week first");
+            }
+        }
+    }
+
+    const getDayAfter = () => {
+        if ((indexDay + num) > 6){
+            console.log("The day after " + num + " days" + " of " + day + " is " + daysWeek[indexDay + num - 7]); 
+        }
+        else {
+            console.log("The day after " + num + " days" + " of " + day + " is " + daysWeek[indexDay + num - 7]);  
+        }
+    }
+</script>
+</html> 
