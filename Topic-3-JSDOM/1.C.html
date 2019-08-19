@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html {
+            background-color: #232323;
+        }
+        .container { 
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: lighter;
+            color: white;
+            background-color: orangered;
+            display: inline-block;
+            border-radius: 1%;
+            padding: 3% 5%;
+        }
+        input {
+            width: 155px;
+            outline: none;
+        }
+        button {
+            margin-top: 1.7%;
+            font-size: 15px;
+            width: 161px;
+            background-color: white;
+            color: orangered;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class = "container">
+    <label for = "input">Insert your word here:</label><br><input type = "text"><br>
+    <button>Validate it!</button>
+    </div>
+</body>
+<script>
+    const button = document.querySelector('button');
+    const input = document.querySelector('input');
+    let flag;
+    let newWord;
+    const verifyPalindrome = () => {
+        newWord = input.value;
+        let k = newWord.length;
+        flag = 0;
+        for (i = 0; i < newWord.length && flag != 1; i++){
+            if (newWord[i] !== newWord[k-1]){
+                flag = 1;
+            }
+            k--;
+        }
+        if (flag === 1){
+            console.log("The type is not valid");
+        }
+        else if (flag === 0 && newWord !== "") {
+            console.log("The word is a palindrome");
+        }
+    }
+    button.onclick = () => {
+        verifyPalindrome(newWord);
+    }
+</script>
+</html> 
