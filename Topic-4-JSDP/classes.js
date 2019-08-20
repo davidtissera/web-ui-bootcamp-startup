@@ -57,5 +57,18 @@ class Logger {
     }
 }
 
-const newLogger = new Logger();
+const social = {
+    share: function(friendName){
+        console.log(friendName + " share " + pulpFiction.title);
+    },
+    like: function(friendName){
+        console.log(friendName + " likes " + pulpFiction.title);
+    }
+}
 const pulpFiction = new Movie ("Pulp Fiction", 1994, 154);
+const newLogger = new Logger();
+Object.assign(Movie.prototype, social);
+pulpFiction.share("Tom");
+pulpFiction.like("Tom");
+
+
