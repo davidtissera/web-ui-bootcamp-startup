@@ -34,13 +34,13 @@ class Movie extends EventEmitter {
         this.duration = duration;
     }
     play(){
-        console.log("The 'play' event has been emitted");
+        newLogger.log("The '" + Movie.prototype.play.name + "' event has been emitted");
     }
     pause(){
-        console.log("The 'pause' event has been emitted");
+        newLogger.log("The '" + Movie.prototype.pause.name + "' event has been emitted");
     }
     resume(){
-        console.log("The 'resume' event has been emitted");
+        newLogger.log("The '" + Movie.prototype.resume.name + "' event has been emitted");
     }
 }
 
@@ -51,22 +51,11 @@ class Actor {
     }
 }
 
-const pulpFiction = new Movie ("Pulp Fiction", 1994, 154);
-const actors = [];
-const johnTravolta = new Actor ("John Travolta", 40);
-const samuelJackson = new Actor ("Samuel Jackson", 46);
-const umaThurman = new Actor ("Uma Thurman", 24);
-const extraCasting = [
-    new Actor ("Extra 1", 22),
-    new Actor ("Extra 2", 10),
-    new Actor ("Extra 3", 69)
-];
-
-Movie.prototype.addCast = function(cast) {
-    actors.push(cast);
+class Logger {
+    log(info){
+        console.log(info);
+    }
 }
 
-pulpFiction.addCast(johnTravolta);
-pulpFiction.addCast(samuelJackson);
-pulpFiction.addCast(umaThurman);
-pulpFiction.addCast(extraCasting);
+const newLogger = new Logger();
+const pulpFiction = new Movie ("Pulp Fiction", 1994, 154);
