@@ -52,9 +52,21 @@ class Actor {
 }
 
 const pulpFiction = new Movie ("Pulp Fiction", 1994, 154);
-pulpFiction.on('play', Movie.prototype.play);
-pulpFiction.on('pause', Movie.prototype.pause);
-pulpFiction.on('resume', Movie.prototype.resume);
-pulpFiction.emit('play');
-pulpFiction.emit('pause');
-pulpFiction.emit('resume');
+const actors = [];
+const johnTravolta = new Actor ("John Travolta", 40);
+const samuelJackson = new Actor ("Samuel Jackson", 46);
+const umaThurman = new Actor ("Uma Thurman", 24);
+const extraCasting = [
+    new Actor ("Extra 1", 22),
+    new Actor ("Extra 2", 10),
+    new Actor ("Extra 3", 69)
+];
+
+Movie.prototype.addCast = function(cast) {
+    actors.push(cast);
+}
+
+pulpFiction.addCast(johnTravolta);
+pulpFiction.addCast(samuelJackson);
+pulpFiction.addCast(umaThurman);
+pulpFiction.addCast(extraCasting);
