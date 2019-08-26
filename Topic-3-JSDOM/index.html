@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel = "stylesheet" type = "text/css" href = "styles.css">
+</head>
+<body>
+    <section>
+        This is another section
+    </section>
+    <section>
+        <p id = "hidden">Hello World</p>
+    </section>
+</body>
+<button>Press me!</button>
+<button>Fetch</button>
+<script>
+    const helloWorld = document.getElementById("hidden");
+    const button = document.querySelectorAll('button');
+    const section = document.querySelector('section');
+    const xhr = new XMLHttpRequest();
+    const alertMessage = () => {
+        alert("Alert!");
+    }
+    document.addEventListener('load', () => {
+        helloWorld.style.display = "block";
+    });
+    button[0].addEventListener("click", () => {
+        alertMessage();
+    });
+    fetch('http://api.icndb.com/jokes/random').then((response) => {
+        return response.text()
+    }).then((text) => {
+        button[1].onclick = () => {
+            section.textContent = text;
+        }
+    }).catch((err) => {
+        section.textContent = err;
+        section.style.color = "red";
+    });
+    
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    const newWord = prompt("Type a word");
+    let flag;
+
+    const verifyPalindrome = (newWord) => {
+        let k = newWord.length;
+        flag = 0;
+        const newWordLenght = newWord.lenght;
+        for (let wordIndex = 0; wordIndex < newWord.length && flag != 1; wordIndex = wordIndex + 1){
+            if (newWord[wordIndex] !== newWord[newWordLenght-1]){
+                flag = 1;
+            }
+            newWordLenght--;
+        }
+        if (flag === 1){
+            alert("The type is not valid");
+        }
+        else {
+            alert("The word is a palindrome");
+        }
+    }
+
+    verifyPalindrome(newWord);
+</script>
+</html>
