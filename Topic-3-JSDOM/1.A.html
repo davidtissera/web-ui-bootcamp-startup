@@ -13,11 +13,12 @@
     const verifyPalindrome = (newWord) => {
         let k = newWord.length;
         flag = 0;
-        for (i = 0; i < newWord.length && flag != 1; i++){
-            if (newWord[i] !== newWord[k-1]){
+        const newWordLenght = newWord.lenght;
+        for (let wordIndex = 0; wordIndex < newWord.length && flag != 1; wordIndex = wordIndex + 1){
+            if (newWord[wordIndex] !== newWord[newWordLenght-1]){
                 flag = 1;
             }
-            k--;
+            newWordLenght--;
         }
         if (flag === 1){
             alert("The type is not valid");
