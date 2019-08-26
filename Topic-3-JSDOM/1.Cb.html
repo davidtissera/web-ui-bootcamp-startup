@@ -37,27 +37,29 @@
     </style>
 </head>
 <body>
-    <div class = "container">
-    <label id = "label1" for = "input1">Insert a day-week here:</label><br><input id = "input1" type = "text"><br>
-    <button id = "button1">Submit it!</button>
+    <div class ="container">
+    <label id ="label1" for ="input1">Insert a day-week here:</label><br><input id = "input1" type = "text"><br>
+    <button id ="button1">Submit it!</button>
     </div><br>
-    <div class = "container">
-    <label id = "label2" for = "input2">Insert a number here:</label><br><input id = "input2" type = "number"><br>
-    <button id = "button2">Submit it!</button>
+    <div class="container">
+    <label id="label2" for="input2">Insert a number here:</label><br><input id = "input2" type = "number"><br>
+    <button id="button2">Submit it!</button>
     </div>
 </body>
 <script>
     const button = document.querySelectorAll('button');
     const input = document.querySelectorAll('input');
-    let daysWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const daysWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     let day, num, indexDay;
+    day = "", num = "";
 
     button[0].onclick = () => {
         day = input[0].value;
         indexDay = daysWeek.indexOf(day);
         if (indexDay < 0 || indexDay > 6){
-            console.log('Try again, beware, case sensitive');
+            console.log("Try again, beware, case sensitive");
             input[0].value = "";
+            day = "";
         }
         else {
             console.log("Day submitted!");
@@ -67,29 +69,23 @@
 
     button[1].onclick = () => {
         num = Number(input[1].value);
-        if ((num < 0 || num > 7) || input[1].value === ""){
-            console.log("Invalid range, try again");
+        if (day === ""){
+            console.log("You have to insert a day-week first");
             input[1].value = "";
+            num = "";
         }
         else {
-            if (input[0].value !== ""){
-                console.log("Number submitted!");
-                getDayAfter();
-                input[1].value = "";
-            }
-            else {
-                console.log("You have to insert a day-week first");
-            }
+            console.log("Number submitted!");
+            getDayAfter();
+            input[1].value = "";
         }
     }
 
     const getDayAfter = () => {
-        if ((indexDay + num) > 6){
-            console.log("The day after " + num + " days" + " of " + day + " is " + daysWeek[indexDay + num - 7]); 
-        }
-        else {
-            console.log("The day after " + num + " days" + " of " + day + " is " + daysWeek[indexDay + num - 7]);  
-        }
+        indexDay = daysWeek.indexOf(day);
+        indexDay += num;
+        indexDay = indexDay % 7;
+        alert(`${num} days after ${day} is ${daysWeek[indexDay]}`);
     }
 </script>
 </html> 
