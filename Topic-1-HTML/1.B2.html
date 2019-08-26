@@ -35,10 +35,15 @@
     <h1>Paul McCartney</h1>
     <img src = "./multimedia/Paul.jpg" alt = "Paul McCartney singing">
     <h1>The Beatles - Help.mp4</h1>
-    <video src = "./multimedia/Help.mp4" controls width="580" height="300" poster = "./multimedia/">
+    <video controls width="580" height="300" poster="./multimedia/Poster.jpg">
+        <source src = "./multimedia/Help.mp4" type = "video/mp4">
+        <source src = "./multimedia/Help.webm" type = "video/webm">
     <p>Your browser don't support HTML5 video here is a <a href="https://www.youtube.com/watch?v=2Q_ZzBGPdqE">link to the video</a> instead</p>
     </video>
     <h1>The Beatles - Help.mp3</h1>
-    <audio src = "./multimedia/Help.mp3" controls></audio>
+    <audio controls>
+        <source src = "./multimedia/Help.mp3">
+        <source src = "./multimedia/Help.ogg>
+    </audio>
 </body>
 </html>
