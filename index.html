@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<ul class = "ul" style = "text-align: right; font-size: small">
+</ul>
+</body>
+<script>
+    const myList = document.querySelector('ul');
+    var url = new URL('https://api.github.com/search/repositories'),
+        params = {q : 'Javascript'}
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
+    /*const myFunction = () => {
+        fetch(url)
+        .then(async function(response){
+            await response.text()
+            .then(async function(text){
+                myList.textContent = await text;
+            });
+        });
+    }
+    myFunction();*/
+    fetch(url).then(function(response) {
+        return response.blob();
+        }).then(function(blob) {
+        // Convert the blob to an object URL — this is basically an temporary internal URL
+        // that points to an object stored inside the browser
+        var objectURL = URL.createObjectURL(blob);
+        // invoke showProduct
+        showProduct(objectURL, product);
+    });
+</script>
+</html>

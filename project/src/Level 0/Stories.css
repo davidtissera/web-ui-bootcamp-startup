@@ -3,24 +3,6 @@
   src: url(../Assets/Fonts/BerryRotunda.ttf);
 }
 
-.stories-header {
-  font-family: 'Berry Rotunda';
-  text-transform: lowercase;
-}
-
-.stories-header-textcontent {
-  -webkit-transition: color 1s, font-size 1s, top 1s;
-  transition: color 1s, font-size 1s, top 1s;
-  cursor: none;
-}
-
-.stories-header-textcontent:hover {
-  position: relative !important;
-  top: 35% !important;
-  font-size: 300%;
-  color: #ffe5ae;
-}
-
 .stories-footer {
   position: relative;
   bottom: 0px;
@@ -65,6 +47,8 @@
 }
 
 .section-stories {
+  margin-top: 180px;
+  padding-top: 40px;
   background-color: #ed9b1c;
   height: auto;
 }

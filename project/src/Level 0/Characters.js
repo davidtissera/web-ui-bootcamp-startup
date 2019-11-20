@@ -30,6 +30,7 @@ export default class Characters extends Component {
           });
       });
   }
+  
   handleInputChange = (event) => {
     this.setState({searchCharacters: event.target.value})
   }

@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 export default class TableTitle extends Component {
   constructor(props){
@@ -13,7 +13,7 @@ export default class TableTitle extends Component {
     return (
       <table className={tableClassName}>
         {titles}
-        <tbody>
+        <tbody className={`${tableClassName}-body`}>
           {content}
         </tbody>
       </table>

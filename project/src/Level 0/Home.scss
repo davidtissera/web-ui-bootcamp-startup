@@ -1,8 +1,3 @@
-@font-face {
-  font-family: 'HarryPotter';
-  src: url(../Assets/Fonts/HarryPotter.TTF)
-}
-
 @import "../globalstyles";
 
 @mixin shieldSettings($transitionTime) {
@@ -14,7 +9,7 @@
   display: block;
 }
 
-@mixin pepe {
+@mixin shieldDisplay {
   .gryffindor-shield {
     display: none;
   }
@@ -36,11 +31,12 @@
   border-radius: 500px;
 }
 
-@mixin houseInfo {
+@mixin houseInfo() {
   -webkit-transition: color 1s;
   transition: color 1s;
   position: relative;
-  top: 230px;
+  top: 260px;
+  padding-left: 0px;
 }
 
 @mixin houseSection ($color, $left) {
@@ -50,87 +46,33 @@
   background-color: $color;
 }
 
-.home-header {
-  font-family: 'HarryPotter';
-  font-size: 30px;
-}
-
-.home-subheader {
-  background-color: $mainColor - 5;
-  font-family: "HarryPotter";
-  font-weight: 400;
-  color: rgb(255, 250, 210);
-  font-size: 30px;
-  padding: 4px 0px 4px 0px;
-  text-align: center;
-  letter-spacing: 3px;
-}
-
 .home-sections {
   position: relative;
   font-family: 'HarryPotter';
-  font-size: 30px;
   font-weight: 200 !important;
   height: 1100px;
+  margin-top: 160px;
+  font-size: 25px;
+  text-align: left;
 }
 
-.home-header-textcontent {
-  @include headerSettings(28%);
+.house-content {
+  position: absolute;
+  padding-left: 30px;
 }
 
-
-.home-buttoncontainer {
-  font-size: 35px !important;
-  font-weight: lighter !important;
-}
-
-.gryffindor-shield {
+.house-shield {
   @include shieldSettings(0.35s);
 }
 
-.gryffindor-shield-img {
+.house-shield-img {
   @include shieldImgSettings(0.35s);
-  &:hover {
-    width: 199px + 50px;
-    height: 239px + 50px;
-  }
+    &:hover {
+      width: 199px + 20px;
+      height: 239px + 20px;
+    }
 }
 
-.slytherin-shield {
-  @include shieldSettings(0.35s);
-}
-
-.slytherin-shield-img {
-  @include shieldImgSettings(0.35s);
-  &:hover {
-    width: 199px + 50px;
-    height: 239px + 50px;
-  }
-}
-
-.ravenclaw-shield {
-  @include shieldSettings(0.35s);
-}
-
-.ravenclaw-shield-img {
-  @include shieldImgSettings(0.35s);
-  &:hover {
-    width: 199px + 50px;
-    height: 239px + 50px;
-  }
-}
-
-.hufflepuff-shield {
-  @include shieldSettings(0.35s);
-}
-
-.hufflepuff-shield-img {
-  @include shieldImgSettings(0.35s);
-  &:hover {
-    width: 199px + 50px;
-    height: 239px + 50px;
-  }
-}
 
 .home-gryffindor-info-not-scrolled {
   @include houseInfo;
@@ -184,3 +126,31 @@
   @include houseSection($hufflepuffColor, 75%);
 }
 
+@media screen and (max-width: 1024px) {
+  .home-sections {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .home-sections {
+    font-size: 20px;
+  }
+  .house-shield-img {
+    width: 70%;
+    height: 70%;
+    &:hover {
+      width: 70% + 10px;
+      height: 70% + 10px;
+    }
+  } 
+}
+
+@media screen and (max-width: 820px) {
+  .home-sections {
+    font-size: 20px;
+  }
+  .house-content {
+    padding-left: 15px;
+  }
+}

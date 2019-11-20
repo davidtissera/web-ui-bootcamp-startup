@@ -1,9 +1,9 @@
 @font-face {
-  font-family: Harry Potter;
-  src: url(./Assets/Fonts/HarryPotter.TTF);
+  font-family: 'HarryPotter';
+  src: url(../Assets/Fonts/HarryPotter.TTF);
 }
 
-@import "./globalstyles";
+@import '../globalstyles';
 
 @mixin buttonSettings($color, $colorHover, $transitionTime) {
   position: absolute;
@@ -30,7 +30,7 @@
   color: white;
 }
 
-#header-button-container {
+.header-buttoncontainer {
   text-transform: capitalize;
   font-size: 35px;
   top: 15%;
@@ -40,7 +40,7 @@
   position: relative;
   float: right;
   background-color: inherit;
-  font-family: "Harry Potter";
+  font-family: "HarryPotter";
 }
 
 .home-button-textcontent {

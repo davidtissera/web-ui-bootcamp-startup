@@ -21,8 +21,8 @@ export default class Header extends Component {
     } = this.props
 
     return (
-      <header id="header" className={`${section}-header`}>
-        <h1 id="header-textcontent" className={`${headerTextContentClassName}-header-textcontent`}>
+      <header className={`${section}-header header`}>
+        <h1 className={`${headerTextContentClassName}-header-textcontent header-textcontent`}>
           {title}
         </h1>
         <ButtonContainer

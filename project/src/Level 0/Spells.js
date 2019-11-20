@@ -4,6 +4,7 @@ import Content from '../Level 1/Content'
 import Footer from '../Level 1/Footer'
 import SpellsList from '../Level 2/SpellsList'
 import querystring from 'query-string'
+import key from '../key'
 import './Spells.css'
 
 
@@ -19,7 +20,7 @@ export default class Spells extends Component {
   componentDidMount() {
     const url = 'https://www.potterapi.com/v1/spells';
     const params = {
-        key: '$2a$10$UAdBgMAn4QwVG1Lmesy/IOcgM83yWR.5k9Q7rfUvSx/7vn58LmblK',
+        key: key,
     }
     const qs = querystring.stringify(params);
     fetch(`${url}?${qs}`)

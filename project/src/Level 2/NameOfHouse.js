@@ -14,7 +14,7 @@ export default class NameOfHouse extends Component {
           spy={true}
           to={`${title.toLowerCase()}-section`}
           smooth={true}
-          offset={180}
+          offset={10}
           duration={800}>
         <Shield
           shieldClassName={`${title.toLowerCase()}-shield`}

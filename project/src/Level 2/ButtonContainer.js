@@ -7,7 +7,7 @@ export default class ButtonContainer extends Component {
     const { className, display, inputChange, valueChange } = this.props
 
   return (
-    <div id="header-button-container" className={className}>
+    <div className={`${className} header-buttoncontainer`}>
       <Button title='Home'/>
       <Button title='Chars'/>
       <Button title='Spells'/>

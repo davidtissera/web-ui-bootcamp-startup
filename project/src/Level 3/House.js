@@ -36,44 +36,45 @@ export default class House extends Component {
       {houses.map((house) => {
         if (house.name === houseName){
           return (
-            <div style={{display: displayContent}}>
+            <div className="house-content" style={{display: displayContent}}>
               <ul className={`${houseClassName}-${scrolled}`}>
                 <HouseContent
-                  classNameTitle={'-house'}
+                  classNameTitle={'house'}
                   title={'House:'}
                   content={` ${house.name}`}
                 />
                 <HouseContent
-                  classNameTitle={'-founder'}
+                  classNameTitle={'founder'}
                   title={'Founder: '}
                   content={`${house.founder}`}
                 />
                 <HouseContent
-                  classNameTitle={'-mascot'}
+                  classNameTitle={'mascot'}
                   title={'Mascot: '}
                   content={`${house.mascot.slice(0, 1).toUpperCase()}${house.mascot.slice(1, 10)}`}
                 />
                 <HouseContent
-                  classNameTitle={'-houseghost'}
+                  classNameTitle={'houseghost'}
                   title={'Ghost: '}
                   content={`${house.houseGhost}`}
                 />
                 <HouseContent
-                  classNameTitle={'-headofhouse'}
+                  classNameTitle={'headofhouse'}
                   title={'Head: '}
                   content={`${house.headOfHouse}`}
                 />
                 <HouseContent
-                  classNameTitle={'-values'}
-                  title={'Values:'}
+                  classNameTitle={'values'}
+                  spanClassName={'values'}
+                  title={'Values: '}
                   content=
                   {house.values.map((value) => {
                     return (
-                      <div>{value}</div>
+                      <div>{` ${value} `}</div>
                     );
                   })}/>
                 <HouseContent 
-                  classNameTitle={'-colors'}
+                  classNameTitle={'colors'}
                   title={'Colors:'}
                   content=
                   {house.colors.map((color)=> {

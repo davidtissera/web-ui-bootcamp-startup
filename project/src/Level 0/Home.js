@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 import React, { Component } from 'react'
 import Header from '../Level 1/Header'
 import SubHeader from '../Level 1/SubHeader'
@@ -15,10 +16,7 @@ export default class Home extends Component {
     super(props);
     this.state = {
       scrolled: false,
-      displayG: "none",
-      displayS: "none",
-      displayR: "none",
-      displayH: "none",
+      active: "none"
     }
   }
 
@@ -49,7 +47,7 @@ export default class Home extends Component {
 
   componentDidMount = () => {
     window.addEventListener("scroll", () => {
-      const isScrolled = window.scrollY < 650;
+      const isScrolled = window.scrollY < 400;
         if (isScrolled !== true) {
           this.setState({ scrolled: true});
         } else {
@@ -66,8 +64,14 @@ export default class Home extends Component {
       displayR,
       displayH,
     } = this.state
-
+    const houses = {
+      GRYFFINDOR: "Gryffindor",
+      SLYTHERIN: "Slytherin",
+      RAVENCLAW: "Ravenclaw",
+      HUFFLEPUFF: "Hufflepuff"
+    }
     const homeClassName = "home"
+
       return (
         <div className={`section-${homeClassName}`}>
           <Header
@@ -78,36 +82,36 @@ export default class Home extends Component {
             headerTextContentClassName={homeClassName}
           />
           <SubHeader
-            content={"Welcome to Hogwart's School of Witchcraft and Wizardry!"}
+            content="Welcome to Hogwart's School of Witchcraft and Wizardry!"
             subHeaderClassName={`${homeClassName}-subheader`}
           />
           <div>
-            <Content 
-              content= {
+            <Content
+              content = {
                 <div className={`${homeClassName}-sections`}>
                   <NameOfHouse
-                    title="Gryffindor"
+                    title={houses.GRYFFINDOR}
                     shield={GryffindorShield}
                     displayContent={displayG}
                     scrolled={scrolled ? "not-scrolled" : "scrolled"}
                     onClickShield={this.HouseHandler.bind(this, "Gryffindor")}
                   />
                   <NameOfHouse
-                    title="Slytherin"
+                    title={houses.SLYTHERIN}
                     shield={SlytherinShield}
                     displayContent={displayS}
                     scrolled={scrolled ? "not-scrolled" : "scrolled"}
                     onClickShield={this.HouseHandler.bind(this, "Slytherin")}
                   />
                   <NameOfHouse
-                    title="Ravenclaw"
+                    title={houses.RAVENCLAW}
                     shield={RavenclawShield}
                     displayContent={displayR}
                     scrolled={scrolled ? "not-scrolled" : "scrolled"}
                     onClickShield={this.HouseHandler.bind(this, "Ravenclaw")}
                   />
                   <NameOfHouse
-                    title="Hufflepuff"
+                    title={houses.HUFFLEPUFF}
                     shield={HufflepuffShield}
                     displayContent={displayH}
                     scrolled={scrolled ? "not-scrolled" : "scrolled"}

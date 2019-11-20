@@ -27,13 +27,13 @@ export default class CharactersList extends Component {
         <TableTitle
           tableClassName={tableTitleClassName}
           titles = {
-            <tr className={`${tableTitleClassName}s`}>
+            <div className={`${tableTitleClassName}s`}>
               <th className={`${tableTitleClassName}-name`}>Name</th>
               <th className={`${tableTitleClassName}-type`}>Type</th>
               <th className={`${tableTitleClassName}-house`}>House</th>
               <th className={`${tableTitleClassName}-role`}>Role</th>
               <th className={`${tableTitleClassName}-blood`}>Blood</th>
-            </tr>
+            </div>
           } 
           content = { characters }
         />

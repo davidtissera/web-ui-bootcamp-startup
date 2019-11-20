@@ -1,0 +1,98 @@
+.container {
+    font-family: 'Helvetica Neue';
+    color: white;
+    display: inline-block;
+    background-color: #232323;
+    width: 734px;
+    height: 620px;
+    position: relative;
+}
+
+.root-header {
+    background-color: red;
+    text-align: center;
+    padding-bottom: 3%;
+    padding-top: 3%;
+    border-radius: 10px;
+    margin: 1%;
+
+}
+
+.navigation {
+    text-align: center;
+    background-color: green;
+    width: 25%;
+    height: 72%;
+    display: inline-block;
+    margin: 1%;
+    border-radius: 10px;
+}
+
+.sidebar {
+    text-align: center;
+    background-color: green;
+    width: 25%;
+    height: 72%;
+    position: absolute;
+    display: inline-block;
+    right: 0px;
+    margin: 1%;
+    border-radius: 10px;
+}
+
+.content {
+    position: relative;
+    text-align: center;
+    background-color: blue;
+    display: inline-block;
+    width: 44.5%;
+    height: 72%;
+    border-radius: 10px;
+}
+
+.section-header {
+    background-color: rgb(0, 89, 255);
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    width: 92%;
+    margin-left: 4%;
+    margin-right: 4%;
+    border-radius: 3px;
+
+}
+
+.article {
+    text-align: center;
+    background-color: rgb(0, 89, 255);
+    position: absolute;
+    top: 25%;
+    width: 92%;
+    height: 50%;
+    margin-left: 4%;
+    margin-right: 4%;
+    border-radius: 3px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 4%;
+    width: 92%;
+    background-color: rgb(0, 89, 255);
+    border-radius: 3px;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.root-footer {
+    text-align: center;
+    background-color: red;
+    bottom: 0px;
+    position: absolute;
+    bottom: 0px;
+    width: 98%;
+    margin: 1%;
+    border-radius: 10px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}

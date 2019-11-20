@@ -20,11 +20,11 @@ export default class SpellsList extends Component {
       <TableTitle
         tableClassName={tableTitleClassName}
         titles = {
-          <tr className={`${tableTitleClassName}s`}>
+          <div className={`${tableTitleClassName}s`}>
             <th className={`${tableTitleClassName}-name`}>Name</th>
             <th className={`${tableTitleClassName}-type`}>Type</th>
             <th className={`${tableTitleClassName}-effect`}>Effect</th>
-          </tr>
+          </div>
         }
         content = { spells }
       />

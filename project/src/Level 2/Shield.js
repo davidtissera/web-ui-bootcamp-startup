@@ -8,12 +8,11 @@ export default class Shield extends Component {
       source,
       alt,
       onClickShield,
-      shieldClassName,
     } = this.props
     return (
-      <div className={shieldClassName} style={{textAlign: "center"}} onClick={onClickShield}>
+      <div className="house-shield" style={{textAlign: "center"}} onClick={onClickShield}>
         <img
-          className={`${shieldClassName}-img`}
+          className="house-shield-img"
           width={width}
           height={height}
           src={source}

@@ -1,9 +1,9 @@
 @font-face {
-  font-family: Harry Potter;
+  font-family: 'HarryPotter';
   src: url(../Assets/Fonts/HarryPotter.TTF);
 }
 
-#header-button-container {
+.header-buttoncontainer {
   text-transform: capitalize;
   font-size: 35px;
   top: 15%;
@@ -13,7 +13,7 @@
   position: relative;
   float: right;
   background-color: inherit;
-  font-family: "Harry Potter";
+  font-family: "HarryPotter";
 }
 
 .home-button-textcontent {

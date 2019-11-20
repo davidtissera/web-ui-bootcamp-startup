@@ -15,19 +15,22 @@ $hufflepuffColor: rgb(187, 130, 8);
 }
 
 @mixin tableTitles() {
+  position: fixed;
   color: white;
   text-align: left;
+  width: 100%;
   background-color: rgba(120, 120, 120, 1);
+  top: 180px;
 }
 
-@mixin headerSettings($top) {
+@mixin headerSettings($top, $fontSize) {
   -webkit-transition: color 1s, font-size 1s, top 1s;
   transition: color 1s, font-size 1s, top 1s;
   cursor: none;
   &:hover {
     position: relative !important;
     top: $top !important;
-    font-size: 300%;
+    font-size: $fontSize;
     color: rgb(255, 229, 174);
   }
 }
