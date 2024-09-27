@@ -1,0 +1,46 @@
+@import "../globalstyles";
+
+
+.spells-footer {
+  position: absolute;
+  bottom: 0px;
+}
+
+.spells-buttoncontainer {
+  font-size: 35px;
+  font-weight: lighter;
+}
+
+.spells-table-titles {
+  @include tableTitles();
+  .spells-table-title-name {
+    width: 33%;
+  }
+  .spells-table-title-type {
+    width: 33%;
+  }
+  .spells-table-title-effect {
+    width: 2000px;
+  }
+}
+
+.spells-table-content-name {
+  @include tableSettings(33%, $ravenclawColor+5);
+}
+
+.spells-table-content-type {
+  @include tableSettings(33%, $ravenclawColor+5);
+}
+
+.spells-table-content-effect {
+  @include tableSettings(2000px, $ravenclawColor+5);
+}
+
+.spells-table-title {
+  @include table();
+}
+
+.section-spells {
+  background-color: $ravenclawColor;
+  margin-top: 202px;
+}

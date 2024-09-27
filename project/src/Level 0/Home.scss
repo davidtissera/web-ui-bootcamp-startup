@@ -1,0 +1,156 @@
+@import "../globalstyles";
+
+@mixin shieldSettings($transitionTime) {
+  position: relative;
+  top: 60px;
+  -webkit-transition: width $transitionTime, height $transitionTime;
+  transition: width $transitionTime, height $transitionTime;
+  cursor: pointer;
+  display: block;
+}
+
+@mixin shieldDisplay {
+  .gryffindor-shield {
+    display: none;
+  }
+  .slytherin-shield {
+    display: none;
+  }
+  .ravenclaw-shield {
+    display: none;
+  }
+  .hufflepuff-shield {
+    display: none;
+  }
+}
+
+
+@mixin shieldImgSettings($transitionTime) {
+  -webkit-transition: width 0.35s, height 0.35s;
+  transition: width 0.35s, height 0.35s;
+  border-radius: 500px;
+}
+
+@mixin houseInfo() {
+  -webkit-transition: color 1s;
+  transition: color 1s;
+  position: relative;
+  top: 260px;
+  padding-left: 0px;
+}
+
+@mixin houseSection ($color, $left) {
+  position: absolute;
+  width: 25%; height: 100%;
+  left: $left;
+  background-color: $color;
+}
+
+.home-sections {
+  position: relative;
+  font-family: 'HarryPotter';
+  font-weight: 200 !important;
+  height: 1100px;
+  margin-top: 160px;
+  font-size: 25px;
+  text-align: left;
+}
+
+.house-content {
+  position: absolute;
+  padding-left: 30px;
+}
+
+.house-shield {
+  @include shieldSettings(0.35s);
+}
+
+.house-shield-img {
+  @include shieldImgSettings(0.35s);
+    &:hover {
+      width: 199px + 20px;
+      height: 239px + 20px;
+    }
+}
+
+
+.home-gryffindor-info-not-scrolled {
+  @include houseInfo;
+}
+
+.home-gryffindor-info-scrolled {
+  @include houseInfo;
+  color: $gryffindorColor;
+}
+
+.home-slytherin-info-not-scrolled {
+  @include houseInfo;
+}
+
+.home-slytherin-info-scrolled {
+  @include houseInfo;
+  color: $slytherinColor;
+}
+
+.home-ravenclaw-info-not-scrolled {
+  @include houseInfo;
+}
+
+.home-ravenclaw-info-scrolled {
+  @include houseInfo;
+  color: $ravenclawColor;
+}
+
+.home-hufflepuff-info-not-scrolled {
+  @include houseInfo;
+}
+
+.home-hufflepuff-info-scrolled {
+  @include houseInfo;
+  color: $hufflepuffColor;
+}
+
+.home-gryffindor-section {
+  @include houseSection($gryffindorColor, 0%);
+}
+
+.home-slytherin-section {
+  @include houseSection($slytherinColor, 25%);
+}
+
+.home-ravenclaw-section {
+  @include houseSection($ravenclawColor, 50%);
+}
+
+.home-hufflepuff-section {
+  @include houseSection($hufflepuffColor, 75%);
+}
+
+@media screen and (max-width: 1024px) {
+  .home-sections {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .home-sections {
+    font-size: 20px;
+  }
+  .house-shield-img {
+    width: 70%;
+    height: 70%;
+    &:hover {
+      width: 70% + 10px;
+      height: 70% + 10px;
+    }
+  } 
+}
+
+@media screen and (max-width: 820px) {
+  .home-sections {
+    font-size: 20px;
+  }
+  .house-content {
+    padding-left: 15px;
+  }
+}

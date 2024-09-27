@@ -1,0 +1,62 @@
+@import "../globalstyles";
+
+.characters-footer {
+  position: absolute;
+  bottom: 0px;
+}
+
+.characters-buttoncontainer {
+  font-size: 35px;
+  font-weight: lighter;
+}
+
+.characters-table-titles {
+  @include tableTitles();
+  .characters-table-title-name {
+    width: 15%;
+  }
+  .characters-table-title-type {
+    width: 15%;
+  }
+  .characters-table-title-house {
+    width: 15%;
+  }
+  .characters-table-title-role {
+    width: 2000px;
+  }
+  .characters-table-title-blood {
+    width: 15%;
+  }
+}
+
+.characters-table-content-name {
+  @include tableSettings(15%, $slytherinColor);
+}
+.characters-table-content-species {
+  @include tableSettings(15%, $slytherinColor);
+}
+.characters-table-content-house {
+  @include tableSettings(15%, $slytherinColor);
+}
+.characters-table-content-blood {
+  @include tableSettings(15%, $slytherinColor);
+}
+.characters-table-content-role {
+  font-size: 14px;
+  @include tableSettings(40%, $slytherinColor);
+}
+
+.characters-table-title {
+  @include table();
+}
+
+.section-characters {
+  background-color: $slytherinColor;
+  margin-top: 202px;
+}
+
+.characters-table-title-name {
+  position: relative;
+  left: 0px;
+  width: inherit;
+}
